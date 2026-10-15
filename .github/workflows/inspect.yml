@@ -2,11 +2,11 @@ name: inspect
 on:
  push:
 jobs:
-  inspect:
+  inspectjobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       - name: kernel details
         run: uname a
       - name: count file
