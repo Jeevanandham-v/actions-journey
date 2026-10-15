@@ -1,9 +1,8 @@
 name: hello
-on:
-  push:
+on: push
 jobs:
-  hello:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - name: greeting
-        run: echo "greeting"
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
