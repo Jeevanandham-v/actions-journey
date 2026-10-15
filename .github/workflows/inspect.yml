@@ -8,7 +8,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: kernel details
-        run: uname a
+        run: uname -a
       - name: count file
         run: |
            ls -laR
