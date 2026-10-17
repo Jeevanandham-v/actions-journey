@@ -6,12 +6,12 @@ jobs:
    runs-on: ubuntu-latest
    steps:
      - name: print rep name
-       run: ${{ github.repository }}
+       run: echo "${{ github.repository }}"
      - name: print branch name
-       run: ${{ github.ref }}
+       run: echo  "${{ github.ref }}"
      - name: print commit id
-       run: ${{ github.sha }}
+       run: echo "${{ github.sha }}"
      - name: event name
-       run: ${{ github.event_name }}
+       run: echo  "${{ github.event_name }}"
      - name: runner os
-       run: ${{ runner.os }}
+       run: echo "${{ runner.os }}"
