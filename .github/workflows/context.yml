@@ -1,0 +1,17 @@
+name: context
+on:
+  push:
+jobs:
+  context-jobs:
+   runs-on: ubuntu-latest
+   steps:
+     - name: print rep name
+       run: ${{ github.repository }}
+     - name: print branch name
+       run: ${{ github.ref }}
+     - name: print commit id
+       run: ${{ github.sha }}
+     - name: event name
+       run: ${{ github.event_name }}
+     - name: runner os
+       run: ${{ runner.os }}
