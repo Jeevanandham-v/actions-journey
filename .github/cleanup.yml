@@ -2,7 +2,7 @@ name: cleanup
 on:
   push:
 jobs:
-  runs-on: ubuntu-lates
+  runs-on: ubuntu-latest
   steps:
     - name: Start test database
       run: echo "db up"
