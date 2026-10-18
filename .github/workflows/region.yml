@@ -1,0 +1,9 @@
+name: var-example
+on:
+  push:
+jobs:
+   var-job:
+     runs-on: ubuntu-latest
+     steps:
+       - name: var
+         run: echo "deploy to ${{ vars.DEPLOY_REGION }}"
