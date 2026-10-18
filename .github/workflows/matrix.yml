@@ -2,7 +2,7 @@ name: matrix
 on:
   push:
 jobs:
-  matrix:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
