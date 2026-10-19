@@ -1,0 +1,11 @@
+name: composite-action
+on:
+  push:
+jobs:
+  actions-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout 
+        uses: actions/checkout@v4
+      - name: build info
+        uses: ./github/actions/build-info
