@@ -8,7 +8,7 @@ jobs:
       - name: create package
         run: echo "myapp" > app.txt
       - name: upload artifact
-        uses: actions/upload-artifacts@v4
+        uses: actions/upload-artifact@v4
         with:
           name: app-package
           path: app.txt
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download package
-        uses: actions/download-artifacts@v4
+        uses: actions/download-artifact@v4
         with:
           name: app-package
       - name: verify the package
