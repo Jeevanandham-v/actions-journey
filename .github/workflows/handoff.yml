@@ -1,0 +1,24 @@
+name: upload-download-example
+on:
+  push:
+jobs:
+  upload-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: create package
+        run: echo "myapp" > app.txt
+      - name: upload artifact
+        uses: actions/upload-artifacts@v4
+        with:
+          name: app-package
+          path: app.txt
+          retention-days: 5
+  download-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: download package
+        uses: actions/download-artifacts@v4
+        with:
+          name: app-package
+      - name: verify the package
+        run: test -f app.txt
