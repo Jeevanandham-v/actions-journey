@@ -5,7 +5,7 @@ inputs:
       description: Name of the app being built
       required: true
 runs:
-  using: compsite
+  using: composite
   steps:
       - run: echo ${{ inputs.app-name }}
         shell: bash
