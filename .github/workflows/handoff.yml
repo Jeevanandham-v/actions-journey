@@ -2,7 +2,7 @@ name: upload-download-example
 on:
   push:
 jobs:
-  upload-jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: create package
@@ -13,7 +13,8 @@ jobs:
           name: app-package
           path: app.txt
           retention-days: 5
-  download-jobs:
+  verify:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: download package
