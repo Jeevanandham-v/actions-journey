@@ -1,0 +1,6 @@
+name: reusable-workflow-demo
+on:
+  push:
+jobs:
+  reusable-caller-job:
+    uses: ./.github/workflows/checks.yml

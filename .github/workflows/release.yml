@@ -1,0 +1,10 @@
+name: reusable-with-inputs-sec
+on:
+  push:
+jobs:
+  called-jobs:
+    uses: ./.github/workflows/notify.yml
+    with:
+      environment: "dev"
+    secrets:
+      NOTIFY_TOKEN: ${{ secrets.NOTIFY_TOKEN }}
