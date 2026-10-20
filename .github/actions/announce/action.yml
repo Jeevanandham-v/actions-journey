@@ -1,0 +1,11 @@
+name: cmp-action-input
+description: compsite action example with input
+inputs:
+  app-name:
+      description: Name of the app being built
+      required: true
+runs:
+  using: composite
+  steps:
+      - run: echo ${{ inputs.app-name }}
+        shell: bash

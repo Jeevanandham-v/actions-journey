@@ -1,0 +1,22 @@
+name: cache-example
+on:
+  push:
+jobs:
+  cache-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install python
+        uses: actions/setup-python@v7
+        with:
+          python-version: 3.12
+      - name: cache step
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }} 
+          restore-keys: |
+             pip-
+      - name: install package
+        run: pip3 install -r requirements.txt

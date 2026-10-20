@@ -1,0 +1,13 @@
+name: cmp-actio-inp
+on:
+  push:
+jobs:
+  cp-in:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out 
+        uses: actions/checkout@v4
+      - name: pass app-name
+        uses: ./.github/actions/announce
+        with:
+          app-name: pixelpost
