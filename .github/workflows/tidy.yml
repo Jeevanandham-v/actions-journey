@@ -1,0 +1,16 @@
+name: good-habits
+on:
+  push:
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  good-habits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: list file
+        run: ls -l
